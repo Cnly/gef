@@ -11527,7 +11527,7 @@ class GefRemoteSessionManager(GefSessionManager):
         # setup emulated file in the chroot
         assert self.__qemu
         target = self.root / str(self.__qemu.parent).lstrip("/")
-        target.mkdir(parents=True, exist_ok=False)
+        target.mkdir(parents=True, exist_ok=True)
         shutil.copy2(self.__qemu, target)
         self._file = self.__qemu
         assert self.lfile.exists()
